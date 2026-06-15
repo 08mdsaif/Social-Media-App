@@ -6,7 +6,9 @@ import axios from 'axios';
  * - Automatically attaches JWT token from localStorage
  */
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: import.meta.env.PROD
+    ? 'https://social-media-app-lilac-gamma.vercel.app/_/backend/api'
+    : 'http://localhost:5000/api',
   headers: {
     'Content-Type': 'application/json',
   },
