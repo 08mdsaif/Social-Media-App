@@ -8,18 +8,8 @@
     "backend": {
       "root": "backend",
       "routePrefix": "/_/backend",
-      "builds": [
-        {
-          "src": "api/index.js",
-          "use": "@vercel/node"
-        }
-      ],
-      "routes": [
-        {
-          "src": "/(.*)",
-          "dest": "api/index.js"
-        }
-      ]
+      "runtime": "@vercel/node",
+      "entrypoint": "api/index.js"
     }
   }
 }
